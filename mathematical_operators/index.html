@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic JavaScript</title>
+</head>
+<body>
+
+    <!-- task 1 -->
+
+    <h2>Calculate how much gasoline you will get with the specific amout of money</h2>
+    <form type ="submit">
+      <label for="gasPrice">Gasoline price (€):</label><br>
+      <input type="number" id="gasPrice" name="gasPrice" ><br>
+      <label for="money">How much are you willing to pay? (€)</label><br>
+      <input type="number" id="money" name="money" ><br><br>
+      <input type="button" onClick="divideBy()" Value="Count" />
+
+      <p>The result is:<br>
+        <span id = "result"></span></p>
+    </form> 
+    <br>
+
+
+     <!-- task 2 -->
+
+    <h2>Calculates the average speed</h2>
+<form>
+    <label for="distance">How big was the distance? (km)</label><br>
+      <input type="number" id="distance" name="distance" ><br>
+      <label for="time">How much time did you spend? (hours)</label><br>
+      <input type="number" id="time" name="time" ><br><br>
+      <input type="button" onClick="calculateAverage()" Value="Count" />
+
+      <p>The result is:<br>
+        <span id = "averageSpeed"></span></p>
+</form>
+<br>
+
+ <!-- task 3 -->
+
+<h2>Transform inches to centimeters</h2>
+<label for="inches">How many inches?</label><br>
+<input type="number" id="inches" name="inches" ><br>
+<br>
+<input type="button" onClick="calculateCm()" Value="Count" />
+
+<p>The result is:<br>
+  <!-- <span id = "inCm"></span></p> -->
+  <span id="outputInches">____</span> inches is equal to <span id="inCm">____</span> cm.
+</p>
+</form>
+<br>
+<!-- task 4 -->
+<h2>Calculate body mass index</h2>
+<label for="height">How tall are you? (meters)(Use dot to separate decimal)</label><br>
+<input type="height" id="height" name="height" ><br>
+<label for="weight">What is your weight? (kg)</label><br>
+<input type="weight" id="weight" name="weight" ><br><br>
+<input type="button" onClick="calculateMassIndex()" Value="Calculate" />
+<p>The result is:<br>
+    <span id = "bodyMassIndex"></span></p>
+
+
+
+ <!-- JavaScript -->
+  <!-- JS task 1 -->
+
+    <script type="text/javascript"> 
+function divideBy() {
+    var gasPrice = document.getElementById("gasPrice").value;
+    var money = document.getElementById("money").value;
+    document.getElementById("result").innerHTML = money / gasPrice;
+}
+
+//JS task 2
+
+function calculateAverage() {
+    var distance = document.getElementById("distance").value;
+    var time = document.getElementById("time").value;
+    document.getElementById("averageSpeed").innerHTML = distance / time;
+}
+
+//JS task 3
+
+function calculateCm() {
+    var inches = document.getElementById("inches").value;
+    //document.getElementById("inCm").innerHTML = inches * 2.54;
+    document.getElementById("outputInches").innerText = inches;
+    document.getElementById("inCm").innerText = inches * 2.54;
+}
+
+//JS task 4
+function calculateMassIndex(){
+    var height = document.getElementById("height").value;
+    var weight = document.getElementById("weight").value;
+    var squareHeight = Math.pow(height,2);
+   var result = weight / squareHeight;
+   if(result < 18.5 ) {
+       document.getElementById("bodyMassIndex").innerText = "You are underweight and beautiful"
+   }
+   else if(result >= 18.5 && result < 24.9) {
+       document.getElementById("bodyMassIndex").innerText = "Normal or Healthy Weight"
+   }
+   else if(result >= 25.0 && result < 29.9) {
+       document.getElementById("bodyMassIndex").innerText = "You are overweight and beautiful"
+   }
+   else if(result >= 30.0) {
+       document.getElementById("bodyMassIndex").innerText = "You are obese and beautiful"
+   }
+}
+
+    </script>
+</body>
+</html>

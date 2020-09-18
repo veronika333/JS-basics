@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+<body>
+    <!-- Task 1 Make a program that prints all positive numbers that are odd 
+    and smaller than 100 starting from 1. (1 3 5 7 9 11…) -->
+    <h1>Loops</h1>
+    <h2>Print odd numbers bigger than 1 and smaller than 100</h2>
+    <button onClick="printOddNumbers()">Print</button>
+    <p>The result is:<br>
+        <span id = "result"></span></p>
+
+
+        <!-- JavaScript -->
+    <script type="text/javascript">
+
+    //Task 1
+    
+    function printOddNumbers(){ 
+ for(let i = 1; i < 100; i++){ 
+   if((i % 2) == 0){ 
+    continue; //if num is odd, skip it. 
+   } 
+   document.getElementById("result").innerHTML += i + ', '; 
+ } 
+} 
+
+
+    </script>
+</body>
+</html>
